@@ -330,7 +330,7 @@ spec:
             - name: init-snapshot-volume
               mountPath: /init-snapshot
             {{- end }}
-            {{- if or .Values.disasterRecovery.enabled (and .Values.disasterRecovery.enabled .Values.startFromSnapshot.enabled) }}
+            {{- if .Values.disasterRecovery.enabled }}
             - name: snapshot-volume
               mountPath: /snapshots
             {{- end }}
